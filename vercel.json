@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "pages/api/backend/[...slug].ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    },
+    "pages/**/*.tsx": {
+      "memory": 3008,
+      "maxDuration": 60
+    }
+  }
+}

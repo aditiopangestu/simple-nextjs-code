@@ -1,14 +1,25 @@
+import https from 'https';
+import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
 
+axios.defaults.httpsAgent = new https.Agent({
+  rejectUnauthorized: false,
+});
+
 export async function getServerSideProps() {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-  const response = await fetch('https://api.sbm.itb.ac.id/faculties?lecture_load_term=2020/2021&all=true', { headers: new Headers({
-    Authorization: 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zYm0uaXRiLmFjLmlkL2xvZ2luIiwiaWF0IjoxNjIyNjM3MjcxLCJleHAiOjE2MjI4NTMyNzEsIm5iZiI6MTYyMjYzNzI3MSwianRpIjoiMmgweVFUdm9LRU5PQU1mViIsInN1YiI6MTExOTV9.b4qPhKBmBR0OlTqgEymdYwVPlv1SkvmTNSezJIWxQh0'
-  })})
+  const response = await axios.get(
+    'https://api.sbm.itb.ac.id/faculties?lecture_load_term=2020/2021&all=true', 
+    { 
+      headers: {
+        Authorization: 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zYm0uaXRiLmFjLmlkL2xvZ2luIiwiaWF0IjoxNjIyNjM3MjcxLCJleHAiOjE2MjI4NTMyNzEsIm5iZiI6MTYyMjYzNzI3MSwianRpIjoiMmgweVFUdm9LRU5PQU1mViIsInN1YiI6MTExOTV9.b4qPhKBmBR0OlTqgEymdYwVPlv1SkvmTNSezJIWxQh0'
+      }
+    }
+  );
   return {
-    props: await response.json()
+    props: response.data
   }
 }
 
