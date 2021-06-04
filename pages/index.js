@@ -14,7 +14,7 @@ export async function getServerSideProps() {
     'https://api.sbm.itb.ac.id/faculties?lecture_load_term=2020/2021&all=true', 
     { 
       headers: {
-        Authorization: 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zYm0uaXRiLmFjLmlkL2xvZ2luIiwiaWF0IjoxNjIyNjM3MjcxLCJleHAiOjE2MjI4NTMyNzEsIm5iZiI6MTYyMjYzNzI3MSwianRpIjoiMmgweVFUdm9LRU5PQU1mViIsInN1YiI6MTExOTV9.b4qPhKBmBR0OlTqgEymdYwVPlv1SkvmTNSezJIWxQh0'
+        Authorization: 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zYm0uaXRiLmFjLmlkL2xvZ2luIiwiaWF0IjoxNjIyNzc5MzcyLCJleHAiOjUzNTUyNTkzNzIsIm5iZiI6MTYyMjc3OTM3MiwianRpIjoiSzg3MTMxSWI1NVNITmFFYyIsInN1YiI6MTExOTV9._vjWGf4GHkP1OMtGDTG_-ZFyAcI1ClYxhuZOuxw6vAw'
       }
     }
   );
